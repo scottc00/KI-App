@@ -18,6 +18,8 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
+    var posts = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,13 +35,29 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
         
+        // Listeners
+        
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user == nil {
                 self.dismiss(animated: true, completion: nil)
                 print("SCOTT: NO USER")
             } else {
-                print("SCOTT: USER STILL LOGGED IN")
+                print("SCOTT: USER IS LOGGED IN")
             }
+        }
+        
+        DataService.ds.REF_POSTS.observe(.value) { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snapshot {
+                    print("SNAP: \(snap)")
+                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                        let id = snap.key
+                        let post = Post(postId: id, postData: postDict)
+                        self.posts.append(post)
+                    }
+                }
+            }
+            self.tableView.reloadData()
         }
     }
     
@@ -54,11 +72,18 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return  tableView.dequeueReusableCell(withIdentifier: "NewsFeedCell") as! NewsFeedCell
+    let post = posts[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "NewsFeedCell") as? NewsFeedCell {
+            cell.configureCell(post: post)
+            return cell
+        } else {
+            return NewsFeedCell()
+        }
     }
     
     func setupSearchBar() {

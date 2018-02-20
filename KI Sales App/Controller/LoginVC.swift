@@ -23,7 +23,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         loginError.isHidden = true
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
+                print("SCOTT: USER IS ALREADY LOGGED IN")
+                UIView.setAnimationsEnabled(false)
                 self.performSegue(withIdentifier: "toSWRevealController", sender: nil)
+                UIView.setAnimationsEnabled(true)
                 self.emailField.text = ""
                 self.passwordField.text = ""
             }
@@ -40,10 +43,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBAction func loginBtnPressed(_ sender: Any) {
         passwordField.resignFirstResponder()
      
-        
         guard let email = emailField.text, emailField.text != "" else { return }
         guard let password = passwordField.text, passwordField.text != "" else { return }
-        
         
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error != nil {
@@ -61,7 +62,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         self.loginError.text = "User disabled"
                         self.loginError.isHidden = false
                     case .userNotFound:
-                        self.loginError.text = "Incorrect username or password"
+                        self.loginError.text = "User not found"
                         self.loginError.isHidden = false
                     default:
                         self.loginError.isHidden = true
@@ -69,9 +70,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 }
                 print(error?.localizedDescription)
             } else {
+            // Reset login error label
                 self.loginError.isHidden = true
                 self.loginError.text = "Incorrect username or password"
+                
+            // User successfully logged in
                 print("SCOTT: User logged in")
+                self.performSegue(withIdentifier: "toSWRevealController", sender: nil)
             }
         }
    }

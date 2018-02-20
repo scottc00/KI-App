@@ -16,8 +16,16 @@ class NewsFeedCell: UITableViewCell {
     @IBOutlet weak var authorLbl: UILabel!
     @IBOutlet weak var numberOfViewsLbl: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
+    func configureCell(post: Post) {
+        self.titleLbl.text = post.title
+        self.descriptionText.text = post.description
+        self.numberOfViewsLbl.text = "\(post.views)"
+        
+        
+    }
 }
