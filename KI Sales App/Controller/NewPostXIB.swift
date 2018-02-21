@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 import AVFoundation
 
 class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -19,11 +20,11 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
     var descriptionPlaceholderLbl = UILabel()
     var linkPlaceholderLbl = UILabel()
     
-    let imagePicker = UIImagePickerController()
+    var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePicker.delegate = self
+        imagePickerSetup()
         descriptionField.delegate = self
         linkField.delegate = self
         setupView()
@@ -43,10 +44,8 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
     }
     
     @IBAction func addImageButton(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            imagePicker.allowsEditing = true
-            imagePicker.sourceType = .photoLibrary
-            present(imagePicker, animated: true, completion: nil)
+        checkPermission()
+        
         
 //            let authStatus = AVCaptureDevice.authorizationStatus(for: .video)
 //
@@ -60,7 +59,6 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
 //                    print("SCOTT: AUTH DENIED")
 //            }
 //        }
-    }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -76,6 +74,36 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
     }
     
     @IBAction func postButton(_ sender: Any) {
+    }
+    
+    func imagePickerSetup() {
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+    }
+    
+    func checkPermission() {
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthorizationStatus {
+        case .authorized:
+            print("Access is granted by user")
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({
+                (newStatus) in
+                print("status is \(newStatus)")
+                if newStatus ==  PHAuthorizationStatus.authorized {
+                    self.present(self.imagePicker, animated: true, completion: nil)
+                    print("success")
+                }
+            })
+            print("It is not determined until now")
+        case .restricted:
+            // same same
+            print("User do not have access to photo album.")
+        case .denied:
+            // same same
+            print("User has denied the permission.")
+        }
     }
     
     func setPlaceholderText() {

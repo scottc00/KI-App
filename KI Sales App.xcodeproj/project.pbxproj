@@ -134,7 +134,6 @@
 		4D1C1DAD1FFF8D7A0050CF04 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4D173CFB2039C6C000B31C18 /* NewsFeedCell.swift */,
 				4DD0726F2000290600379DFC /* LoginVC.swift */,
 				4D1AE56F2029B4EE0090F901 /* ResetPasswordXIB.swift */,
 				4D011DEA202DBBE10046F524 /* NewsFeedVC.swift */,
@@ -155,6 +154,7 @@
 				4D0FB8582030B73300BEB807 /* NewPostTextField.swift */,
 				4D7E5A672031CEF80031ABAA /* RoundImage.swift */,
 				4D5B88D1203C39BF006B182E /* NewsFeedCellView.swift */,
+				4D173CFB2039C6C000B31C18 /* NewsFeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

@@ -19,23 +19,17 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @IBOutlet weak var tableView: UITableView!
     
     var posts = [Post]()
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSearchBar()
+        setupMenuReveal()
         tableView.delegate = self
         tableView.dataSource = self
         
-        
-        if self.revealViewController() != nil {
-            menuBtn.target = self.revealViewController()
-            menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-        }
-        
-        // Listeners
+        // Listeners / observers
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user == nil {
@@ -47,9 +41,10 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         }
         
         DataService.ds.REF_POSTS.observe(.value) { (snapshot) in
+            self.posts = []
+            
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
-                    print("SNAP: \(snap)")
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
                         let id = snap.key
                         let post = Post(postId: id, postData: postDict)
@@ -67,8 +62,9 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         present(newPostXIB, animated: false, completion: nil)
     }
     
+    // TableView
     func numberOfSections(in tableView: UITableView) -> Int {
-       return 1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,16 +72,23 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let post = posts[indexPath.row]
+        let post = posts[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "NewsFeedCell") as? NewsFeedCell {
-            cell.configureCell(post: post)
-            return cell
+            
+            if let img = NewsFeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
+                cell.configureCell(post: post, img: img)
+                return cell
+            } else {
+                cell.configureCell(post: post)
+                return cell
+            }
         } else {
             return NewsFeedCell()
         }
     }
     
+    // Search Bar
     func setupSearchBar() {
         searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = false
@@ -97,7 +100,16 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        
+    }
+    
+    //SW Reveal
+    func setupMenuReveal() {
+        if self.revealViewController() != nil {
+            menuBtn.target = self.revealViewController()
+            menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        }
     }
 }
 
