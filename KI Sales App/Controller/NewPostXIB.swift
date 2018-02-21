@@ -9,16 +9,15 @@
 import UIKit
 import Photos
 import AVFoundation
+import Firebase
 
 class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
-    @IBOutlet weak var linkField: UITextView!
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var image: UIImageView!
     var descriptionPlaceholderLbl = UILabel()
-    var linkPlaceholderLbl = UILabel()
     
     var imagePicker: UIImagePickerController!
     
@@ -26,7 +25,6 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
         super.viewDidLoad()
         imagePickerSetup()
         descriptionField.delegate = self
-        linkField.delegate = self
         setupView()
     }
     
@@ -45,20 +43,6 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
     
     @IBAction func addImageButton(_ sender: Any) {
         checkPermission()
-        
-        
-//            let authStatus = AVCaptureDevice.authorizationStatus(for: .video)
-//
-//            if authStatus == AVAuthorizationStatus.authorized {
-//                print("SCOTT: AUTHORIZED")
-//            }
-//            if authStatus == AVAuthorizationStatus.notDetermined {
-//                    print("SCOTT: NOT SET")
-//                }
-//            if authStatus == AVAuthorizationStatus.denied {
-//                    print("SCOTT: AUTH DENIED")
-//            }
-//        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -74,6 +58,38 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
     }
     
     @IBAction func postButton(_ sender: Any) {
+        guard let title = titleField.text, title != "" else {
+            print("SCOTT: TITLE MUST BE ENTERED")
+            return
+        }
+        guard let description = descriptionField.text, description != "" else {
+            print("SCOTT: DESCRIPTION MUST BE ENTERED")
+            return
+        }
+        guard let category = categoryField.text, category != "" else {
+            print("SCOTT: CATEGORY MUST BE SELECTED")
+            return
+        }
+        guard let img = image.image else {
+            print("SCOTT: IMAGE NOT SELECTED")
+            image.image = #imageLiteral(resourceName: "default-image")
+            return
+        }
+    
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            let imgUid = NSUUID().uuidString
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGES.child(imgUid).putData(imgData, metadata: metadata) { (metadata, error) in
+                if error != nil {
+                    print("SCOTT: UNABLE TO UPLOAD IMAGE TO FIREBASE STORAGE")
+                } else {
+                    print("SCOTT: IMAGE UPLOADED SUCCESSFULLY TO FIREBASE STORAGE")
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                }
+            }
+        }
     }
     
     func imagePickerSetup() {
@@ -86,6 +102,7 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
         let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
         switch photoAuthorizationStatus {
         case .authorized:
+            self.present(self.imagePicker, animated: true, completion: nil)
             print("Access is granted by user")
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization({
@@ -107,19 +124,6 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
     }
     
     func setPlaceholderText() {
-        let linkPlaceholderX: CGFloat = self.view.frame.size.width / 75
-        let linkPlaceholderY: CGFloat = 0
-        let linkPlaceholderWidth = linkField.bounds.width - linkPlaceholderX
-        let linkPlaceholderHeight: CGFloat = 30
-        let linkPlaceholderFontSize = self.view.frame.size.width / 25
-        
-        linkPlaceholderLbl.frame = CGRect(x: linkPlaceholderX + 5, y: linkPlaceholderY, width: linkPlaceholderWidth, height: linkPlaceholderHeight)
-        linkPlaceholderLbl.text = "Link"
-        linkPlaceholderLbl.font = UIFont(name: "AvenirNext", size: linkPlaceholderFontSize)
-        linkPlaceholderLbl.textColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
-        linkPlaceholderLbl.textAlignment = NSTextAlignment.left
-        linkField.addSubview(linkPlaceholderLbl)
-        
         let descriptionPlaceholderX: CGFloat = self.view.frame.size.width / 75
         let descriptionPlaceholderY: CGFloat = 0
         let descriptionPlaceholderWidth = descriptionField.bounds.width - descriptionPlaceholderX
@@ -139,11 +143,6 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
             descriptionPlaceholderLbl.isHidden = false
         } else {
             descriptionPlaceholderLbl.isHidden = true
-        }
-        if linkField.text.isEmpty {
-            linkPlaceholderLbl.isHidden = false
-        } else {
-            linkPlaceholderLbl.isHidden = true
         }
     }
 }
