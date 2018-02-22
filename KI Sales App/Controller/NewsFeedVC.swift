@@ -19,6 +19,7 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @IBOutlet weak var tableView: UITableView!
     
     var posts = [Post]()
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,8 +80,14 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     let post = posts[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "NewsFeedCell") as? NewsFeedCell {
-            cell.configureCell(post: post)
-            return cell
+            
+            if let img = NewsFeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
+                cell.configureCell(post: post, img: img)
+                return cell
+            } else {
+                cell.configureCell(post: post)
+                return cell
+            }
         } else {
             return NewsFeedCell()
         }

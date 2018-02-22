@@ -30,8 +30,8 @@
 		4DDDE8F4202E345D00B102DC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDE8F3202E345D00B102DC /* GradientView.swift */; };
 		4DDDE8FA2030908000B102DC /* NewPostXIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDE8F82030908000B102DC /* NewPostXIB.swift */; };
 		4DDDE8FB2030908000B102DC /* NewPostXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDDE8F92030908000B102DC /* NewPostXIB.xib */; };
-		4DE3294B203ECC7600C125F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3294A203ECC7600C125F6 /* GoogleService-Info.plist */; };
-		4DE3294E203ECC8000C125F6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3294C203ECC8000C125F6 /* SWRevealViewController.m */; };
+		4DE32950203ED40100C125F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3294F203ED40100C125F6 /* GoogleService-Info.plist */; };
+		4DE32953203ED40900C125F6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE32951203ED40900C125F6 /* SWRevealViewController.m */; };
 		F0D00378144F262379CF4309 /* Pods_KI_Sales_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9435CCEF0486D3EB666DFAA3 /* Pods_KI_Sales_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,9 +64,9 @@
 		4DDDE8F3202E345D00B102DC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		4DDDE8F82030908000B102DC /* NewPostXIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostXIB.swift; sourceTree = "<group>"; };
 		4DDDE8F92030908000B102DC /* NewPostXIB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewPostXIB.xib; sourceTree = "<group>"; };
-		4DE3294A203ECC7600C125F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4DE3294C203ECC8000C125F6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
-		4DE3294D203ECC8000C125F6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
+		4DE3294F203ED40100C125F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4DE32951203ED40900C125F6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
+		4DE32952203ED40900C125F6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		9435CCEF0486D3EB666DFAA3 /* Pods_KI_Sales_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KI_Sales_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5F2A9177414EED05EC8A4AF /* Pods-KI Sales App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KI Sales App.release.xcconfig"; path = "Pods/Target Support Files/Pods-KI Sales App/Pods-KI Sales App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,8 +124,8 @@
 				4D1C1D971FFE82970050CF04 /* AppDelegate.swift */,
 				4D1C1D9B1FFE82970050CF04 /* Main.storyboard */,
 				4D1C1DA31FFE82970050CF04 /* LaunchScreen.storyboard */,
+				4DE3294F203ED40100C125F6 /* GoogleService-Info.plist */,
 				4D1C1DA61FFE82970050CF04 /* Info.plist */,
-				4DE3294A203ECC7600C125F6 /* GoogleService-Info.plist */,
 				4D1C1D9E1FFE82970050CF04 /* KI_Sales_App.xcdatamodeld */,
 			);
 			path = "KI Sales App";
@@ -134,7 +134,6 @@
 		4D1C1DAD1FFF8D7A0050CF04 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4D173CFB2039C6C000B31C18 /* NewsFeedCell.swift */,
 				4DD0726F2000290600379DFC /* LoginVC.swift */,
 				4D1AE56F2029B4EE0090F901 /* ResetPasswordXIB.swift */,
 				4D011DEA202DBBE10046F524 /* NewsFeedVC.swift */,
@@ -155,6 +154,7 @@
 				4D0FB8582030B73300BEB807 /* NewPostTextField.swift */,
 				4D7E5A672031CEF80031ABAA /* RoundImage.swift */,
 				4D5B88D1203C39BF006B182E /* NewsFeedCellView.swift */,
+				4D173CFB2039C6C000B31C18 /* NewsFeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,8 +178,8 @@
 		4DDDE8EC202DF35200B102DC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4DE3294D203ECC8000C125F6 /* SWRevealViewController.h */,
-				4DE3294C203ECC8000C125F6 /* SWRevealViewController.m */,
+				4DE32952203ED40900C125F6 /* SWRevealViewController.h */,
+				4DE32951203ED40900C125F6 /* SWRevealViewController.m */,
 				4DDDE8ED202DF39300B102DC /* KI Sales App-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
@@ -275,7 +275,7 @@
 				4DDDE8FB2030908000B102DC /* NewPostXIB.xib in Resources */,
 				4D7E5A66203174B50031ABAA /* Assets.xcassets in Resources */,
 				4D1C1D9D1FFE82970050CF04 /* Main.storyboard in Resources */,
-				4DE3294B203ECC7600C125F6 /* GoogleService-Info.plist in Resources */,
+				4DE32950203ED40100C125F6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D137C4C2029C80F002B9252 /* RoundedView.swift in Sources */,
-				4DE3294E203ECC8000C125F6 /* SWRevealViewController.m in Sources */,
+				4DE32953203ED40900C125F6 /* SWRevealViewController.m in Sources */,
 				4D1C1DA01FFE82970050CF04 /* KI_Sales_App.xcdatamodeld in Sources */,
 				4DD5F2F5200025E900DEA9DE /* RoundButton.swift in Sources */,
 				4DDDE8FA2030908000B102DC /* NewPostXIB.swift in Sources */,
