@@ -87,9 +87,26 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
                 } else {
                     print("SCOTT: IMAGE UPLOADED SUCCESSFULLY TO FIREBASE STORAGE")
                     let downloadURL = metadata?.downloadURL()?.absoluteString
+                    if let url = downloadURL {
+                        self.postToFirebase(imgUrl: (url as String))
+                    }
                 }
             }
         }
+    }
+    
+    func postToFirebase(imgUrl: String) {
+        let post: Dictionary<String, Any> = [
+            "title": titleField.text! as String,
+            "description": descriptionField.text as String,
+            "category": categoryField.text! as String,
+            "imageUrl": imgUrl as String,
+            "views": 0 as Int
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        dismiss(animated: true, completion: nil)
     }
     
     func imagePickerSetup() {

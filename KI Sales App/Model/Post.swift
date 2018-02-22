@@ -41,7 +41,7 @@ class Post {
         self._views = views
     }
     
-    init(postId: String, postData: Dictionary<String, AnyObject>) {
+    init(postId: String, postData: Dictionary<String, Any>) {
         self._postId = postId
         
         if let title = postData["title"] as? String {
