@@ -61,6 +61,36 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
     }
     
     @IBAction func postButton(_ sender: Any) {
+        guard let title = titleField.text, title != "" else {
+            print("SCOTT: Tittle must be entered")
+            return
+        }
+        guard let description = descriptionField.text, description != "" else {
+            print("Description must be entered")
+            return
+        }
+        guard let category = categoryField.text, category != "" else {
+            print("SCOTT: A category must be entered")
+            return
+        }
+        guard let img = image.image else {
+            print("SCOTT: An image must be selected")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            let imgUid = NSUUID().uuidString
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/jpeg"
+            DataService.ds.REF_POST_IMAGES.child(imgUid).putData(imgData, metadata: metaData) { (metadata, error) in
+                if error != nil {
+                    print("SCOTT: Unable to upload image to Firebase storage")
+                } else {
+                    print("SCOTT: Successfull uploaded image to Firebase storage")
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                }
+            }
+        }
     }
     
     func checkPermission() {
