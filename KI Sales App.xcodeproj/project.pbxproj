@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D011DEB202DBBE10046F524 /* NewsFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D011DEA202DBBE10046F524 /* NewsFeedVC.swift */; };
+		4D011DED202DBE3D0046F524 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D011DEC202DBE3D0046F524 /* DataService.swift */; };
+		4D0FB8572030B62900BEB807 /* RoundTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0FB8562030B62900BEB807 /* RoundTextView.swift */; };
+		4D0FB8592030B73300BEB807 /* NewPostTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0FB8582030B73300BEB807 /* NewPostTextField.swift */; };
+		4D137C4C2029C80F002B9252 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D137C4B2029C80F002B9252 /* RoundedView.swift */; };
+		4D173CFC2039C6C000B31C18 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D173CFB2039C6C000B31C18 /* NewsFeedCell.swift */; };
+		4D1AE5712029B4EE0090F901 /* ResetPasswordXIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AE56F2029B4EE0090F901 /* ResetPasswordXIB.swift */; };
+		4D1AE5722029B4EE0090F901 /* ResetPasswordXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1AE5702029B4EE0090F901 /* ResetPasswordXIB.xib */; };
+		4D1C1D981FFE82970050CF04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C1D971FFE82970050CF04 /* AppDelegate.swift */; };
+		4D1C1D9D1FFE82970050CF04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1C1D9B1FFE82970050CF04 /* Main.storyboard */; };
+		4D1C1DA01FFE82970050CF04 /* KI_Sales_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C1D9E1FFE82970050CF04 /* KI_Sales_App.xcdatamodeld */; };
+		4D1C1DA51FFE82970050CF04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1C1DA31FFE82970050CF04 /* LaunchScreen.storyboard */; };
+		4D5B88D2203C39BF006B182E /* NewsFeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B88D1203C39BF006B182E /* NewsFeedCellView.swift */; };
+		4D7E5A66203174B50031ABAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D7E5A65203174B40031ABAA /* Assets.xcassets */; };
+		4D7E5A682031CEF80031ABAA /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E5A672031CEF80031ABAA /* RoundImage.swift */; };
+		4DD072702000290600379DFC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0726F2000290600379DFC /* LoginVC.swift */; };
+		4DD200DD203C8786004E9DA1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD200DC203C8786004E9DA1 /* Post.swift */; };
+		4DD5F2F32000251F00DEA9DE /* RoundField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5F2F22000251F00DEA9DE /* RoundField.swift */; };
+		4DD5F2F5200025E900DEA9DE /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5F2F4200025E900DEA9DE /* RoundButton.swift */; };
+		4DDDE8F2202DF76500B102DC /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDE8F1202DF76500B102DC /* MenuVC.swift */; };
+		4DDDE8F4202E345D00B102DC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDE8F3202E345D00B102DC /* GradientView.swift */; };
+		4DDDE8FA2030908000B102DC /* NewPostXIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDDE8F82030908000B102DC /* NewPostXIB.swift */; };
+		4DDDE8FB2030908000B102DC /* NewPostXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDDE8F92030908000B102DC /* NewPostXIB.xib */; };
+		4DE3294B203ECC7600C125F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3294A203ECC7600C125F6 /* GoogleService-Info.plist */; };
+		4DE3294E203ECC8000C125F6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3294C203ECC8000C125F6 /* SWRevealViewController.m */; };
+		F0D00378144F262379CF4309 /* Pods_KI_Sales_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9435CCEF0486D3EB666DFAA3 /* Pods_KI_Sales_App.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3ED23FD1F843210BA42B15BB /* Pods-KI Sales App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KI Sales App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KI Sales App/Pods-KI Sales App.debug.xcconfig"; sourceTree = "<group>"; };
+		4D011DE9202A09430046F524 /* KI Sales App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "KI Sales App.entitlements"; sourceTree = "<group>"; };
+		4D011DEA202DBBE10046F524 /* NewsFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedVC.swift; sourceTree = "<group>"; };
+		4D011DEC202DBE3D0046F524 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		4D0FB8562030B62900BEB807 /* RoundTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTextView.swift; sourceTree = "<group>"; };
+		4D0FB8582030B73300BEB807 /* NewPostTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostTextField.swift; sourceTree = "<group>"; };
+		4D137C4B2029C80F002B9252 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		4D173CFB2039C6C000B31C18 /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
+		4D1AE56F2029B4EE0090F901 /* ResetPasswordXIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordXIB.swift; sourceTree = "<group>"; };
+		4D1AE5702029B4EE0090F901 /* ResetPasswordXIB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordXIB.xib; sourceTree = "<group>"; };
+		4D1C1D941FFE82970050CF04 /* KI Sales App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KI Sales App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D1C1D971FFE82970050CF04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D1C1D9C1FFE82970050CF04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D1C1D9F1FFE82970050CF04 /* KI_Sales_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KI_Sales_App.xcdatamodel; sourceTree = "<group>"; };
+		4D1C1DA41FFE82970050CF04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4D1C1DA61FFE82970050CF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D5B88D1203C39BF006B182E /* NewsFeedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCellView.swift; sourceTree = "<group>"; };
+		4D7E5A65203174B40031ABAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D7E5A672031CEF80031ABAA /* RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
+		4DD0726F2000290600379DFC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		4DD200DC203C8786004E9DA1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		4DD5F2F22000251F00DEA9DE /* RoundField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundField.swift; sourceTree = "<group>"; };
+		4DD5F2F4200025E900DEA9DE /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		4DDDE8ED202DF39300B102DC /* KI Sales App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KI Sales App-Bridging-Header.h"; sourceTree = "<group>"; };
+		4DDDE8F1202DF76500B102DC /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		4DDDE8F3202E345D00B102DC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		4DDDE8F82030908000B102DC /* NewPostXIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostXIB.swift; sourceTree = "<group>"; };
+		4DDDE8F92030908000B102DC /* NewPostXIB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewPostXIB.xib; sourceTree = "<group>"; };
+		4DE3294A203ECC7600C125F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4DE3294C203ECC8000C125F6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
+		4DE3294D203ECC8000C125F6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
+		9435CCEF0486D3EB666DFAA3 /* Pods_KI_Sales_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KI_Sales_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5F2A9177414EED05EC8A4AF /* Pods-KI Sales App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KI Sales App.release.xcconfig"; path = "Pods/Target Support Files/Pods-KI Sales App/Pods-KI Sales App.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D1C1D911FFE82970050CF04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0D00378144F262379CF4309 /* Pods_KI_Sales_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D1AE5732029B4F80090F901 /* XIBS */ = {
+			isa = PBXGroup;
+			children = (
+				4D1AE5702029B4EE0090F901 /* ResetPasswordXIB.xib */,
+				4DDDE8F92030908000B102DC /* NewPostXIB.xib */,
+			);
+			path = XIBS;
+			sourceTree = "<group>";
+		};
+		4D1C1D8B1FFE82960050CF04 = {
+			isa = PBXGroup;
+			children = (
+				4D1C1D961FFE82970050CF04 /* KI Sales App */,
+				4D1C1D951FFE82970050CF04 /* Products */,
+				586D55C6E0A108607E94EFA4 /* Pods */,
+				94437173B2266A2B31E0FA94 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4D1C1D951FFE82970050CF04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D1C1D941FFE82970050CF04 /* KI Sales App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D1C1D961FFE82970050CF04 /* KI Sales App */ = {
+			isa = PBXGroup;
+			children = (
+				4DD200DB203C6FFB004E9DA1 /* Services */,
+				4DDDE8EC202DF35200B102DC /* Supporting Files */,
+				4D011DE9202A09430046F524 /* KI Sales App.entitlements */,
+				4D1AE5732029B4F80090F901 /* XIBS */,
+				4D1C1DAF1FFF8D7F0050CF04 /* Model */,
+				4D1C1DAE1FFF8D7D0050CF04 /* View */,
+				4D1C1DAD1FFF8D7A0050CF04 /* Controller */,
+				4D7E5A65203174B40031ABAA /* Assets.xcassets */,
+				4D1C1D971FFE82970050CF04 /* AppDelegate.swift */,
+				4D1C1D9B1FFE82970050CF04 /* Main.storyboard */,
+				4D1C1DA31FFE82970050CF04 /* LaunchScreen.storyboard */,
+				4D1C1DA61FFE82970050CF04 /* Info.plist */,
+				4DE3294A203ECC7600C125F6 /* GoogleService-Info.plist */,
+				4D1C1D9E1FFE82970050CF04 /* KI_Sales_App.xcdatamodeld */,
+			);
+			path = "KI Sales App";
+			sourceTree = "<group>";
+		};
+		4D1C1DAD1FFF8D7A0050CF04 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D173CFB2039C6C000B31C18 /* NewsFeedCell.swift */,
+				4DD0726F2000290600379DFC /* LoginVC.swift */,
+				4D1AE56F2029B4EE0090F901 /* ResetPasswordXIB.swift */,
+				4D011DEA202DBBE10046F524 /* NewsFeedVC.swift */,
+				4DDDE8F82030908000B102DC /* NewPostXIB.swift */,
+				4DDDE8F1202DF76500B102DC /* MenuVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D1C1DAE1FFF8D7D0050CF04 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4DD5F2F22000251F00DEA9DE /* RoundField.swift */,
+				4DD5F2F4200025E900DEA9DE /* RoundButton.swift */,
+				4D137C4B2029C80F002B9252 /* RoundedView.swift */,
+				4DDDE8F3202E345D00B102DC /* GradientView.swift */,
+				4D0FB8562030B62900BEB807 /* RoundTextView.swift */,
+				4D0FB8582030B73300BEB807 /* NewPostTextField.swift */,
+				4D7E5A672031CEF80031ABAA /* RoundImage.swift */,
+				4D5B88D1203C39BF006B182E /* NewsFeedCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D1C1DAF1FFF8D7F0050CF04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4DD200DC203C8786004E9DA1 /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4DD200DB203C6FFB004E9DA1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4D011DEC202DBE3D0046F524 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4DDDE8EC202DF35200B102DC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DE3294D203ECC8000C125F6 /* SWRevealViewController.h */,
+				4DE3294C203ECC8000C125F6 /* SWRevealViewController.m */,
+				4DDDE8ED202DF39300B102DC /* KI Sales App-Bridging-Header.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		586D55C6E0A108607E94EFA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3ED23FD1F843210BA42B15BB /* Pods-KI Sales App.debug.xcconfig */,
+				E5F2A9177414EED05EC8A4AF /* Pods-KI Sales App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		94437173B2266A2B31E0FA94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9435CCEF0486D3EB666DFAA3 /* Pods_KI_Sales_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D1C1D931FFE82970050CF04 /* KI Sales App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D1C1DA91FFE82970050CF04 /* Build configuration list for PBXNativeTarget "KI Sales App" */;
+			buildPhases = (
+				9664F595638E070A7F2D592A /* [CP] Check Pods Manifest.lock */,
+				4D1C1D901FFE82970050CF04 /* Sources */,
+				4D1C1D911FFE82970050CF04 /* Frameworks */,
+				4D1C1D921FFE82970050CF04 /* Resources */,
+				30695C0B45F6FE2F7E34AB49 /* [CP] Embed Pods Frameworks */,
+				06AF68004C2E199D3279E7F2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KI Sales App";
+			productName = "KI Sales App";
+			productReference = 4D1C1D941FFE82970050CF04 /* KI Sales App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D1C1D8C1FFE82960050CF04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Scott Callery";
+				TargetAttributes = {
+					4D1C1D931FFE82970050CF04 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 4D1C1D8F1FFE82960050CF04 /* Build configuration list for PBXProject "KI Sales App" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D1C1D8B1FFE82960050CF04;
+			productRefGroup = 4D1C1D951FFE82970050CF04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D1C1D931FFE82970050CF04 /* KI Sales App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D1C1D921FFE82970050CF04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D1AE5722029B4EE0090F901 /* ResetPasswordXIB.xib in Resources */,
+				4D1C1DA51FFE82970050CF04 /* LaunchScreen.storyboard in Resources */,
+				4DDDE8FB2030908000B102DC /* NewPostXIB.xib in Resources */,
+				4D7E5A66203174B50031ABAA /* Assets.xcassets in Resources */,
+				4D1C1D9D1FFE82970050CF04 /* Main.storyboard in Resources */,
+				4DE3294B203ECC7600C125F6 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06AF68004C2E199D3279E7F2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KI Sales App/Pods-KI Sales App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30695C0B45F6FE2F7E34AB49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KI Sales App/Pods-KI Sales App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KI Sales App/Pods-KI Sales App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9664F595638E070A7F2D592A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KI Sales App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D1C1D901FFE82970050CF04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D137C4C2029C80F002B9252 /* RoundedView.swift in Sources */,
+				4DE3294E203ECC8000C125F6 /* SWRevealViewController.m in Sources */,
+				4D1C1DA01FFE82970050CF04 /* KI_Sales_App.xcdatamodeld in Sources */,
+				4DD5F2F5200025E900DEA9DE /* RoundButton.swift in Sources */,
+				4DDDE8FA2030908000B102DC /* NewPostXIB.swift in Sources */,
+				4DD072702000290600379DFC /* LoginVC.swift in Sources */,
+				4DDDE8F2202DF76500B102DC /* MenuVC.swift in Sources */,
+				4D1AE5712029B4EE0090F901 /* ResetPasswordXIB.swift in Sources */,
+				4D1C1D981FFE82970050CF04 /* AppDelegate.swift in Sources */,
+				4D011DEB202DBBE10046F524 /* NewsFeedVC.swift in Sources */,
+				4D5B88D2203C39BF006B182E /* NewsFeedCellView.swift in Sources */,
+				4D0FB8592030B73300BEB807 /* NewPostTextField.swift in Sources */,
+				4D7E5A682031CEF80031ABAA /* RoundImage.swift in Sources */,
+				4D0FB8572030B62900BEB807 /* RoundTextView.swift in Sources */,
+				4D173CFC2039C6C000B31C18 /* NewsFeedCell.swift in Sources */,
+				4DDDE8F4202E345D00B102DC /* GradientView.swift in Sources */,
+				4DD200DD203C8786004E9DA1 /* Post.swift in Sources */,
+				4DD5F2F32000251F00DEA9DE /* RoundField.swift in Sources */,
+				4D011DED202DBE3D0046F524 /* DataService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4D1C1D9B1FFE82970050CF04 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D1C1D9C1FFE82970050CF04 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4D1C1DA31FFE82970050CF04 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D1C1DA41FFE82970050CF04 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D1C1DA71FFE82970050CF04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4D1C1DA81FFE82970050CF04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D1C1DAA1FFE82970050CF04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ED23FD1F843210BA42B15BB /* Pods-KI Sales App.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "KI Sales App/KI Sales App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7S3VWNH6C7;
+				INFOPLIST_FILE = "KI Sales App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.KI-Sales-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KI Sales App/Supporting Files/KI Sales App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4D1C1DAB1FFE82970050CF04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5F2A9177414EED05EC8A4AF /* Pods-KI Sales App.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "KI Sales App/KI Sales App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7S3VWNH6C7;
+				INFOPLIST_FILE = "KI Sales App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.KI-Sales-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KI Sales App/Supporting Files/KI Sales App-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D1C1D8F1FFE82960050CF04 /* Build configuration list for PBXProject "KI Sales App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D1C1DA71FFE82970050CF04 /* Debug */,
+				4D1C1DA81FFE82970050CF04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D1C1DA91FFE82970050CF04 /* Build configuration list for PBXNativeTarget "KI Sales App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D1C1DAA1FFE82970050CF04 /* Debug */,
+				4D1C1DAB1FFE82970050CF04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4D1C1D9E1FFE82970050CF04 /* KI_Sales_App.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4D1C1D9F1FFE82970050CF04 /* KI_Sales_App.xcdatamodel */,
+			);
+			currentVersion = 4D1C1D9F1FFE82970050CF04 /* KI_Sales_App.xcdatamodel */;
+			path = KI_Sales_App.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4D1C1D8C1FFE82960050CF04 /* Project object */;
+}

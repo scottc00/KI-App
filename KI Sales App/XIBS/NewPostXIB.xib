@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewPostXIB" customModule="KI_Sales_App" customModuleProvider="target">
+            <connections>
+                <outlet property="categoryField" destination="FhP-r9-ZB2" id="ape-hU-TQb"/>
+                <outlet property="descriptionField" destination="bjp-0A-Akj" id="BYe-fK-aSm"/>
+                <outlet property="image" destination="pP1-OK-Nsj" id="uON-rb-dhj"/>
+                <outlet property="linkField" destination="tzp-DR-Kay" id="rbG-IU-sdQ"/>
+                <outlet property="titleField" destination="j9x-QO-50A" id="90g-MN-63p"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sH-6j-uuW">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTo-oq-ERb" customClass="RoundedView" customModule="KI_Sales_App" customModuleProvider="target">
+                    <rect key="frame" x="37.5" y="58.5" width="300" height="550"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBg-5I-8Pu">
+                            <rect key="frame" x="0.0" y="40" width="300" height="394"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mx7-ib-uM5">
+                                    <rect key="frame" x="-0.5" y="-0.5" width="300" height="550"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="PzC-US-HX2">
+                                            <rect key="frame" x="16" y="0.0" width="268" height="250"/>
+                                            <subviews>
+                                                <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9x-QO-50A" customClass="NewPostTextField" customModule="KI_Sales_App" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="268" height="30"/>
+                                                    <color key="backgroundColor" red="0.95275488455177659" green="0.95275488455177659" blue="0.95275488455177659" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="mdF-bF-VEM"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textField>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bjp-0A-Akj" customClass="RoundTextView" customModule="KI_Sales_App" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="42" width="268" height="124"/>
+                                                    <color key="backgroundColor" red="0.95275488460000002" green="0.95275488460000002" blue="0.95275488460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                </textView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="tzp-DR-Kay" customClass="RoundTextView" customModule="KI_Sales_App" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="178" width="268" height="30"/>
+                                                    <color key="backgroundColor" red="0.95275488460000002" green="0.95275488460000002" blue="0.95275488460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="ZzZ-1F-6eg"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                </textView>
+                                                <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhP-r9-ZB2" customClass="NewPostTextField" customModule="KI_Sales_App" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="220" width="268" height="30"/>
+                                                    <color key="backgroundColor" red="0.95275488455177659" green="0.95275488455177659" blue="0.95275488455177659" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="lMp-AR-8Dz"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="250" id="Zl3-vG-Z5e"/>
+                                            </constraints>
+                                        </stackView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-image" translatesAutoresizingMaskIntoConstraints="NO" id="pP1-OK-Nsj" customClass="RoundImage" customModule="KI_Sales_App" customModuleProvider="target">
+                                            <rect key="frame" x="18" y="266" width="264" height="264"/>
+                                            <color key="backgroundColor" red="0.57254901960000004" green="0.76862745099999996" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="264" id="aBJ-4z-EK3"/>
+                                                <constraint firstAttribute="width" constant="264" id="yTv-u8-eSN"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="PzC-US-HX2" firstAttribute="leading" secondItem="Mx7-ib-uM5" secondAttribute="leading" constant="16" id="1ZP-nM-6Hd"/>
+                                        <constraint firstAttribute="height" constant="550" id="20Z-9H-QZo"/>
+                                        <constraint firstItem="pP1-OK-Nsj" firstAttribute="top" secondItem="PzC-US-HX2" secondAttribute="bottom" constant="16" id="bkI-IL-sY0"/>
+                                        <constraint firstItem="pP1-OK-Nsj" firstAttribute="centerX" secondItem="PzC-US-HX2" secondAttribute="centerX" id="kXO-Pm-yyf"/>
+                                        <constraint firstAttribute="trailing" secondItem="PzC-US-HX2" secondAttribute="trailing" constant="16" id="u76-7S-dfc"/>
+                                        <constraint firstItem="PzC-US-HX2" firstAttribute="top" secondItem="Mx7-ib-uM5" secondAttribute="top" id="vGY-gP-68z"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Mx7-ib-uM5" secondAttribute="bottom" id="3uM-Sy-SN3"/>
+                                <constraint firstItem="Mx7-ib-uM5" firstAttribute="leading" secondItem="OBg-5I-8Pu" secondAttribute="leading" id="HiD-Zi-rnV"/>
+                                <constraint firstItem="Mx7-ib-uM5" firstAttribute="top" secondItem="OBg-5I-8Pu" secondAttribute="top" id="j1T-nV-vQe"/>
+                                <constraint firstAttribute="trailing" secondItem="Mx7-ib-uM5" secondAttribute="trailing" id="sze-R6-RQO"/>
+                            </constraints>
+                        </scrollView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYq-wi-MTG">
+                            <rect key="frame" x="268" y="8" width="24" height="24"/>
+                            <state key="normal" image="close"/>
+                            <connections>
+                                <action selector="closeButton:" destination="-1" eventType="touchUpInside" id="16R-jf-4cP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPW-oM-Yec" customClass="RoundButton" customModule="KI_Sales_App" customModuleProvider="target">
+                            <rect key="frame" x="15.5" y="450" width="268" height="36"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                            <state key="normal" title="Add Image">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="addImageButton:" destination="-1" eventType="touchUpInside" id="yFu-Av-RUI"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVM-hk-dvN" customClass="RoundButton" customModule="KI_Sales_App" customModuleProvider="target">
+                            <rect key="frame" x="16" y="494" width="268" height="36"/>
+                            <color key="backgroundColor" red="0.30266166779999998" green="0.69933516610000002" blue="0.99948447939999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                            <state key="normal" title="Post">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="postButton:" destination="-1" eventType="touchUpInside" id="eWt-xd-dxD"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="QVM-hk-dvN" secondAttribute="trailing" constant="16" id="4bG-Ic-7H5"/>
+                        <constraint firstItem="OBg-5I-8Pu" firstAttribute="leading" secondItem="OTo-oq-ERb" secondAttribute="leading" id="Amf-hl-g5D"/>
+                        <constraint firstAttribute="height" constant="550" id="HUy-BL-z2F"/>
+                        <constraint firstItem="QVM-hk-dvN" firstAttribute="leading" secondItem="OTo-oq-ERb" secondAttribute="leading" constant="16" id="IaD-Zv-Bm1"/>
+                        <constraint firstItem="Mx7-ib-uM5" firstAttribute="width" secondItem="OTo-oq-ERb" secondAttribute="width" id="Wll-Pz-0aQ"/>
+                        <constraint firstItem="dYq-wi-MTG" firstAttribute="top" secondItem="OTo-oq-ERb" secondAttribute="top" constant="8" id="Xcs-St-WNV"/>
+                        <constraint firstItem="QVM-hk-dvN" firstAttribute="top" secondItem="gPW-oM-Yec" secondAttribute="bottom" constant="8" id="Xj7-ZE-dR3"/>
+                        <constraint firstItem="OBg-5I-8Pu" firstAttribute="top" secondItem="dYq-wi-MTG" secondAttribute="bottom" constant="8" id="c4S-9V-TMm"/>
+                        <constraint firstAttribute="trailing" secondItem="dYq-wi-MTG" secondAttribute="trailing" constant="8" id="flk-1Z-8Zo"/>
+                        <constraint firstAttribute="width" constant="300" id="gpL-rQ-iVy"/>
+                        <constraint firstAttribute="bottom" secondItem="QVM-hk-dvN" secondAttribute="bottom" constant="20" id="le5-my-fXt"/>
+                        <constraint firstItem="gPW-oM-Yec" firstAttribute="leading" secondItem="OTo-oq-ERb" secondAttribute="leading" constant="16" id="mDb-sY-SKq"/>
+                        <constraint firstAttribute="trailing" secondItem="OBg-5I-8Pu" secondAttribute="trailing" id="qje-GX-PIt"/>
+                        <constraint firstAttribute="trailing" secondItem="gPW-oM-Yec" secondAttribute="trailing" constant="16" id="vof-vr-JuV"/>
+                        <constraint firstItem="gPW-oM-Yec" firstAttribute="top" secondItem="OBg-5I-8Pu" secondAttribute="bottom" constant="16" id="xFc-st-BGt"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9sH-6j-uuW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1mi-5s-Sv9"/>
+                <constraint firstItem="OTo-oq-ERb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="I0K-MR-XaH"/>
+                <constraint firstItem="OTo-oq-ERb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="VA3-lM-0uo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9sH-6j-uuW" secondAttribute="trailing" id="bmH-c2-TqS"/>
+                <constraint firstItem="9sH-6j-uuW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wYF-VR-xm8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9sH-6j-uuW" secondAttribute="bottom" id="ygE-U0-Ded"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="34.5" y="79.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close" width="24" height="24"/>
+        <image name="default-image" width="1280" height="960"/>
+    </resources>
+</document>
