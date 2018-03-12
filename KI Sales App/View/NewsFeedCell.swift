@@ -16,7 +16,9 @@ class NewsFeedCell: UITableViewCell {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var authorLbl: UILabel!
     @IBOutlet weak var numberOfViewsLbl: UILabel!
+    @IBOutlet weak var postDate: UILabel!
     
+    var newsFeedVC = NewsFeedVC()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +28,8 @@ class NewsFeedCell: UITableViewCell {
         self.titleLbl.text = post.title
         self.descriptionText.text = post.description
         self.numberOfViewsLbl.text = "\(post.views)"
+        self.postDate.text = "\(convertTimeStamp(serverTimestamp: Double(post.postedDate)))"
+        
         
         if img != nil {
             self.postImage.image = img
@@ -45,5 +49,24 @@ class NewsFeedCell: UITableViewCell {
                 }
             })
         }
+        
+//        let fullNameRef = DataService.ds.REF_USER_CURRENT.child("fullname")
+//        fullNameRef.observeSingleEvent(of: .value) { (snapshot) in
+//            if let _ = snapshot.value as? NSNull {
+//                self.authorLbl.text = "N/A"
+//            } else {
+//                self.authorLbl.text = "\(snapshot.value!)"
+//            }
+//        }
+        
+    }
+    
+    func convertTimeStamp(serverTimestamp: Double) -> String {
+        let x = serverTimestamp / 1000
+        let date = Date(timeIntervalSince1970: x)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm  dd/MM/yy"
+        
+        return formatter.string(from: date as Date)
     }
 }

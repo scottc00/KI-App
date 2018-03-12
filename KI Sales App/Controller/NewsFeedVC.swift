@@ -28,7 +28,6 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         tableView.delegate = self
         tableView.dataSource = self
         
-        
         if self.revealViewController() != nil {
             menuBtn.target = self.revealViewController()
             menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -47,7 +46,7 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             }
         }
         
-        DataService.ds.REF_POSTS.observe(.value) { (snapshot) in
+        DataService.ds.REF_POSTS.queryOrdered(byChild: "postedDate").observe(.value) { (snapshot) in
             self.posts = []
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
@@ -77,7 +76,7 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let post = posts[indexPath.row]
+    let post = posts.reversed()[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "NewsFeedCell") as? NewsFeedCell {
             
@@ -106,5 +105,7 @@ class NewsFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     func updateSearchResults(for searchController: UISearchController) {
         
     }
+    
+    
 }
 

@@ -190,6 +190,7 @@
                                             <outlet property="authorLbl" destination="I96-Db-Zza" id="1Ro-uV-UEg"/>
                                             <outlet property="descriptionText" destination="3WL-MW-KnT" id="pxQ-lD-Dx2"/>
                                             <outlet property="numberOfViewsLbl" destination="2Gj-qU-K2e" id="wKB-Xk-680"/>
+                                            <outlet property="postDate" destination="zJK-BH-IxY" id="VxN-F2-nAd"/>
                                             <outlet property="postImage" destination="ihH-4h-qcw" id="TDx-xz-NxM"/>
                                             <outlet property="titleLbl" destination="18e-oi-8kR" id="ip0-6k-bEd"/>
                                         </connections>

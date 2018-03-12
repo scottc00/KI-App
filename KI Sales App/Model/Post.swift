@@ -14,6 +14,7 @@ class Post {
     private var _imageUrl: String!
     private var _views: Int!
     private var _postId: String!
+    private var _postedDate : Int!
     
     var title: String {
         return _title
@@ -35,10 +36,15 @@ class Post {
         return _postId
     }
     
-    init(title: String, imageUrl: String, description: String, views: Int) {
+    var postedDate: Int {
+        return _postedDate
+    }
+    
+    init(title: String, imageUrl: String, description: String, views: Int, postedDate: Int) {
         self._title = title
         self._imageUrl = imageUrl
         self._views = views
+        self._postedDate = postedDate
     }
     
     init(postId: String, postData: Dictionary<String, AnyObject>) {
@@ -58,6 +64,10 @@ class Post {
         
         if let views = postData["views"] as? Int {
             self._views = views
+        }
+        
+        if let postedDate = postData["postedDate"] as? Int {
+            self._postedDate = postedDate
         }
     }
 }

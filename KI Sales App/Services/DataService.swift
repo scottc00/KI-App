@@ -15,6 +15,7 @@ let STORAGE_BASE = Storage.storage().reference()
 class DataService: UIViewController {
 
     // Database References
+    private let _CURRENT_USER_UID = Auth.auth().currentUser?.uid
     static let ds = DataService()
     private var _REF_BASE = DB_BASE
     private var _REF_POSTS = DB_BASE.child("posts")
@@ -22,6 +23,10 @@ class DataService: UIViewController {
     
     // Storage References
     private var _REF_POST_IMAGES = STORAGE_BASE.child("post-pics")
+    
+    var currentUserUID: String! {
+        return _CURRENT_USER_UID
+    }
     
     var REF_BASE: DatabaseReference {
         return _REF_BASE
@@ -31,6 +36,12 @@ class DataService: UIViewController {
         return _REF_POSTS
     }
     
+    var REF_USER_CURRENT: DatabaseReference {
+        let uid = Auth.auth().currentUser?.uid
+        let user = REF_USERS.child(uid!)
+        return user
+    }
+
     var REF_USERS: DatabaseReference {
         return _REF_USERS
     }

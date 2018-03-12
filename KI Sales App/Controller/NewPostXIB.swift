@@ -20,6 +20,8 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
     var descriptionPlaceholderLbl = UILabel()
     var linkPlaceholderLbl = UILabel()
     
+    
+    
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -88,9 +90,27 @@ class NewPostXIB: UIViewController, UITextViewDelegate, UIImagePickerControllerD
                 } else {
                     print("SCOTT: Successfull uploaded image to Firebase storage")
                     let downloadURL = metadata?.downloadURL()?.absoluteString
+                    if let url = downloadURL {
+                        self.postToFirebase(imageUrl: url)
+                    }
                 }
             }
         }
+    }
+    
+    func postToFirebase(imageUrl: String) {
+        let post: Dictionary<String, Any> = [
+            "title": titleField.text,
+            "description": descriptionField.text,
+            "category": categoryField.text,
+            "views": 0,
+            "imageUrl": imageUrl,
+            "UID": Auth.auth().currentUser?.uid,
+            "postedDate": ServerValue.timestamp()   
+        ]
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        dismiss(animated: true, completion: nil)
     }
     
     func checkPermission() {
